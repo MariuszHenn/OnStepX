@@ -22,7 +22,7 @@
   #define SERIAL_TMC            Serial1          // Use a single hardware serial port to up to four drivers
   #define SERIAL_TMC_BAUD       460800           // Baud rate
   #define SERIAL_TMC_RX         39               // Recieving data
-  #define SERIAL_TMC_TX         4                // Transmit data
+  #define SERIAL_TMC_TX         13                // Transmit data
   #define SERIAL_TMC_ADDRESS_MAP(x) ((x==4)?2 : x) // Axis1(0) is 0, Axis2(1) is 1, Axis3(2) is 2, Axis4(3) is 3, Axis5(4) is 2
 #endif
 
@@ -55,7 +55,7 @@
 #endif
 #define STATUS_LED_ON_STATE HIGH
 #ifndef STATUS_LED_PIN
-  #define STATUS_LED_PIN        12               // Default LED Anode (+)
+  #define STATUS_LED_PIN        AUX8_PIN               // Default LED Anode (+)
 #endif
 #ifdef MOUNT_LED_ON_STATE
   #undef MOUNT_LED_ON_STATE
@@ -68,7 +68,7 @@
 
 // For a piezo buzzer
 #ifndef STATUS_BUZZER_PIN
-  #define STATUS_BUZZER_PIN     12               // [must be low at boot 12] Tone
+  #define STATUS_BUZZER_PIN     4               // [must be low at boot 12] Tone
 #endif
 
 // The PPS pin is a 3.3V logic input, OnStep measures time between rising edges and adjusts the internal sidereal clock frequency
@@ -91,9 +91,9 @@
 #define AXIS1_M2_PIN            OFF              // UART TX
 #define AXIS1_M3_PIN            OFF              // UART RX
 #define AXIS1_STEP_PIN          18
-#define AXIS1_DIR_PIN           0                // [must be high at boot 0]
+#define AXIS1_DIR_PIN           2                // [must be high at boot 0]
 #ifndef AXIS1_SENSE_HOME_PIN
-  #define AXIS1_SENSE_HOME_PIN  AUX3_PIN
+  #define AXIS1_SENSE_HOME_PIN  OFF
 #endif
 
 // Axis2 Dec/Alt step/dir driver
@@ -105,7 +105,7 @@
 #define AXIS2_STEP_PIN          27
 #define AXIS2_DIR_PIN           26
 #ifndef AXIS2_SENSE_HOME_PIN
-  #define AXIS2_SENSE_HOME_PIN  AUX4_PIN
+  #define AXIS2_SENSE_HOME_PIN  OFF
 #endif
 #ifndef AXIS2_ENCODER_B_PIN
   #define AXIS2_ENCODER_B_PIN   AUX2_PIN
